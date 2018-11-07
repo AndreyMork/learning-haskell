@@ -1,3 +1,5 @@
+sandbox.hs
+
 dist
 dist-*
 cabal-dev

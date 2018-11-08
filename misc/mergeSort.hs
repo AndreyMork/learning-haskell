@@ -1,7 +1,3 @@
-splitInHalf :: [a] -> ([a], [a])
-splitInHalf xs = (take n xs, drop n xs)
-  where n = (length xs) `div` 2
-
 merge :: (Ord a) => [a] -> [a] -> [a]
 merge [] xs = xs
 merge xs [] = xs
@@ -16,6 +12,6 @@ mergeSort list =
     then list
   else merge sortedFirstHalf sortedSecondHalf
   where
-    (firstHalf, secondHalf) = splitInHalf list
-    sortedFirstHalf = mergeSort firstHalf
-    sortedSecondHalf = mergeSort secondHalf
+    middelInd = (length list) `div` 2
+    sortedFirstHalf = mergeSort (take middelInd list)
+    sortedSecondHalf = mergeSort (drop middelInd list)
